@@ -317,3 +317,24 @@ Traceback (most recent call last):
     raise Unauthorized(response)
 tweepy.errors.Unauthorized: 401 Unauthorized
 Unauthorized
+2025-01-18 19:54:18,806 - utils.twitter - DEBUG - Twitter APIクライアントを初期化しました
+2025-01-18 19:54:18,808 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-01-18 19:54:18,816 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-01-18 19:54:18,816 - __main__ - INFO - ボットを開始します（実行間隔: 120分）
+2025-01-18 19:54:18,818 - apscheduler.scheduler - INFO - Added job "TweetImageBot.run" to job store "default"
+2025-01-18 19:54:18,818 - apscheduler.scheduler - INFO - Scheduler started
+2025-01-18 19:54:18,819 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2025-01-18 19:54:18,820 - apscheduler.executors.default - INFO - Running job "TweetImageBot.run (trigger: interval[2:00:00], next run at: 2025-01-18 19:54:18 JST)" (scheduled at 2025-01-18 19:54:18.813227+09:00)
+2025-01-18 19:54:18,820 - apscheduler.scheduler - DEBUG - Next wakeup is due at 2025-01-18 21:54:18.813227+09:00 (in 7199.992475 seconds)
+2025-01-18 19:54:18,821 - __main__ - INFO - ハッシュタグ #Python の処理を開始
+2025-01-18 19:54:18,821 - utils.twitter - INFO - 検索クエリ: #Python -is:retweet lang:ja
+2025-01-18 19:54:18,821 - tweepy.client - DEBUG - Making API request: GET https://api.twitter.com/2/tweets/search/recent
+Parameters: {'max_results': 3, 'tweet.fields': 'created_at,author_id,text', 'query': '#Python -is:retweet lang:ja'}
+Headers: {'User-Agent': 'Python/3.12.3 Requests/2.31.0 Tweepy/4.15.0', 'Authorization': 'Bearer AAAAAAAAAAAAAAAAAAAAANAjyQEAAAAA3jztDbniCW4go35O75nrUGio538%3DFbuhCTmyNmGQ02PN2rNds8zLUlSHjrKGZdS7iqBTG08IJDdm4C'}
+Body: None
+2025-01-18 19:54:18,825 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): api.twitter.com:443
+2025-01-18 19:54:19,300 - urllib3.connectionpool - DEBUG - https://api.twitter.com:443 "GET /2/tweets/search/recent?max_results=3&tweet.fields=created_at%2Cauthor_id%2Ctext&query=%23Python+-is%3Aretweet+lang%3Aja HTTP/1.1" 429 94
+2025-01-18 19:54:19,306 - tweepy.client - DEBUG - Received API response: 429 Too Many Requests
+Headers: {'date': 'Sat, 18 Jan 2025 10:54:19 UTC', 'perf': '7402827104', 'server': 'tsa_m', 'set-cookie': 'guest_id_marketing=v1%3A173719765935944026; Max-Age=63072000; Expires=Mon, 18 Jan 2027 10:54:19 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None, guest_id_ads=v1%3A173719765935944026; Max-Age=63072000; Expires=Mon, 18 Jan 2027 10:54:19 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None, personalization_id="v1_i3jhMvUNlwEsYVeOYQ1TgQ=="; Max-Age=63072000; Expires=Mon, 18 Jan 2027 10:54:19 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None, guest_id=v1%3A173719765935944026; Max-Age=63072000; Expires=Mon, 18 Jan 2027 10:54:19 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None', 'api-version': '2.123', 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-cache, no-store, max-age=0', 'content-length': '94', 'x-access-level': 'read', 'x-frame-options': 'SAMEORIGIN', 'content-encoding': 'gzip', 'x-transaction-id': 'fb0f14ddb1d97a67', 'x-xss-protection': '0', 'x-rate-limit-limit': '1', 'x-rate-limit-reset': '1737197765', 'content-disposition': 'attachment; filename=json.json', 'x-content-type-options': 'nosniff', 'x-rate-limit-remaining': '0', 'strict-transport-security': 'max-age=631138519', 'x-response-time': '106', 'x-connection-hash': '7fba27fc154964064bc80b1a2a2cad94914d3f2fd427600651dd6b7758b7a7a2'}
+Content: b'{"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}'
+2025-01-18 19:54:19,306 - tweepy.client - WARNING - Rate limit exceeded. Sleeping for 107 seconds.
